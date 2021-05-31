@@ -24,23 +24,41 @@
 # Preprocessing
 
 - We remove all the missing values.
-
-- We 
+- We clean the data by removing punctuations, stopwords and applying lowercase. Thus we use PorterStemmer, stemming is the process of reducing words to their       word stem.
  
  
-# Neural Network
-  
-  - This model was created using tf.keras.models.Sequential, which defines a SEQUENCE of layers in the neural network. These sequence of layers used were the following:
-  - One Embedding layer:  This is the process that help us to go from just a string of numbers representing words to actually get text sentiment. This process is     called embedding, with the idea being that words and associated words are clustered as vectors in a multi-dimensional space. 
-  - One GlobalAveragePooling1D layer
-  - Two Dense layers: This adds a layer of neurons. Each layer of neurons has an activation function to tell them what to do. Therefore, the first Dense layer       consisted in 24 neurons with relu as an activation function. The second, have 1 neuron and sigmoid as activation function. 
+# Models
 
-- We built this model using adam optimizer and binary_crossentropy as loss function, as we're classifying to different classes.
+- First model: Bag of words and Machine Learning model 
+  - We apply the method of bag of words to the text.
+  - We define the independent and dependent variables.
+  - We do train and test split.
+  - We apply MultinomialNB Algorithm
+    - Train MultinomialNB Algorithm's Accuracy: 0.924
+    - Test MultinomialNB Algorithm's Accuracy: 0.901
 
-- The number of epochs=30
+- Second model: One hot representation and Neural Network with LSTM
+  - We apply one hot representation to the words in the text.
+  - We apply padding to have the same lenght.
+  - We apply the Neural Network model
+    - This is composed by: One embedding layer, one LSTM layer, and one Dense layer with one neuron and sigmoid as activation function.
+    - The Adam optimizer is used and the binary_croosentropy for loss.
+    - Train Neural Network's Accuracy: 0.996
+    - Test Neural Network's Accuracy: 0.906
 
-- We obtained Accuracy 0.8800 for the train data and Accuracy 0.8171 for the validation data.
-  
- <p align="center">
-  <img src="https://github.com/lilosa88/Sarcasm-detection/blob/main/Images/Screenshot%20from%202021-05-31%2016-10-14.png" width="320" height="460">
- </p>  
+- Third model: One hot representation and Neural Network with a Bidirectional LSTM and a Dropout layer
+  - We apply one hot representation to the words in the text.
+  - We apply padding to have the same lenght.
+  - We apply the Neural Network model
+    - This is composed by: One embedding layer, one Bidirectional LSTM layer, oNe Dropout layer and one Dense layer with one neuron and sigmoid as activation           function.
+    - The Adam optimizer is used and the binary_croosentropy for loss.
+    - Train Neural Network's Accuracy: 0.996
+    - Test Neural Network's Accuracy: 0.907
+
+- Fourth model: TF-idf Vectorizer and Machine Learning model 
+  - We apply the method of TF-idf Vectorizer to the text.
+  - We define the independent and dependent variables.
+  - We do train and test split.
+  - We apply MultinomialNB Algorithm
+    - Train MultinomialNB Algorithm's Accuracy: 0.918
+    - Test MultinomialNB Algorithm's Accuracy: 0.880
