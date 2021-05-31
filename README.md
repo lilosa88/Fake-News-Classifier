@@ -1,15 +1,7 @@
 # Fake-News-Classifier
 # Objective
 
-- This project belongs to [kaggle's competitions](https://www.kaggle.com/rmisra/news-headlines-dataset-for-sarcasm-detection/home) and I carried out as a part of a specialization called [DeepLearning.AI TensorFlow Developer Specialization](https://www.coursera.org/account/accomplishments/specialization/certificate/L6R6AFWVXHZT) which is given by DeepLearning.AI. This specialization is conformed by 4 courses: 
-1. Introduction to TensorFlow for Artificial Intelligence, Machine Learning, and Deep Learning 
-2. Convolutional Neural Networks in TensorFlow 
-3. Natural Language Processing in TensorFlow 
-4. Sequences, Time Series and Prediction
-
-  Specifically this project is part of the third course in this specialization. 
-  
-- We will make use of a public data-sets published by [Rishabh Misra](https://rishabhmisra.github.io/publications/) with details on [Kaggle] (https://www.kaggle.com/rmisra/news-headlines-dataset-for-sarcasm-detection/home). News Headlines dataset for Sarcasm Detection is collected from two news website. [TheOnion](https://www.theonion.com/) aims at producing sarcastic versions of current events and we collected all the headlines from News in Brief and News in Photos categories (which are sarcastic). We collect real (and non-sarcastic) news headlines from [HuffPost](https://www.huffingtonpost.com/). 
+- This project belongs to [kaggle's competitions](https://www.kaggle.com/c/fake-news/data). The objective is to sevelop a machine learning or Deep Learning program to identify when an article might be fake news.
 
 
 # Code and Resources Used
@@ -19,21 +11,15 @@
 
 # Data description
 
-Each record consists of three attributes:
+- A full training dataset with the following attributes:
 
-- is_sarcastic: 1 if the record is sarcastic otherwise 0
-
-- headline: the headline of the news article
-
-- article_link: link to the original news article. Useful in collecting supplementary data
-
-This dataset has following advantages
-
-- Since news headlines are written by professionals in a formal manner, there are no spelling mistakes and informal usage. This reduces the sparsity and also increases the chance of finding pre-trained embeddings.
-
-- Furthermore, since the sole purpose of TheOnion is to publish sarcastic news, we get high-quality labels.
-
-- The headlines we obtained are self-contained. This would help us in teasing apart the real sarcastic elements.
+  - id: unique id for a news article
+  - title: the title of a news article
+  - author: author of the news article
+  - text: the text of the article; could be incomplete
+  - label: a label that marks the article as potentially unreliable
+    - 1: unreliable
+    - 0: reliable
 
 # Preprocessing
 
